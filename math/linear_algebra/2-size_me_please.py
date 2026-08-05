@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# Define function matrix_shape
+"""Define function matrix_shape"""
+
 
 def matrix_shape(matrix: list) -> list[int]:
     """Calculate the shape of the input matrix"""
