@@ -3,8 +3,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def scatter():
-    """Plot x -> y as a scatter plot"""
+    """Plot x -> y as a scatter plot."""
     mean = [69, 0]
     cov = [[15, 8], [8, 15]]
     np.random.seed(5)
