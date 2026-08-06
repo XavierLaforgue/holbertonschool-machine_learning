@@ -37,16 +37,25 @@ def all_in_one():
         ['line', 'scatter'],
         ['log scale', 'two plots'],
         ['hist', 'hist']],
-        layout="constrained",
-        num='Tasks 0 to 4 as subplots'
-        )
-    fig.suptitle('All in One')
+        # layout="constrained",
+        # layout='tight',
+        num='Tasks 0 to 4 as subplots',
+        figsize=(6.4, 4.8)
+    )
+    # fig.set_layout_engine("constrained", w_pad = 4 / 72, h_pad = 4 / 72, wspace= 4 / 72, hspace= 4 / 72)
+    fig.set_layout_engine("tight",
+                          pad=1.08,
+                          rect=(0, 0, 1, 1.06))
+    
+    fig.suptitle('All in One',
+                #   y=.95
+                )
     ax00 = axs['line']
     ax00.plot(np.arange(0, 11), y0, linestyle='-', color='red')
     ax00.set_xlim(0, 10)
 
     ax01 = axs['scatter']
-    ax01.scatter(x1, y1, color='magenta', marker='o')
+    ax01.scatter(x1, y1, c='magenta', marker='o', s=5)
     ax01.set_xlabel('Height (in)')
     ax01.set_ylabel('Weight (lbs)')
     ax01.set_title("Men's Height vs Weight")
@@ -80,4 +89,6 @@ def all_in_one():
     ax2.set_ylabel('Number of Students')
     ax2.set_title('Project A')
 
+    fig.savefig("all_in_one.png", dpi=300)
     plt.show()
+    
