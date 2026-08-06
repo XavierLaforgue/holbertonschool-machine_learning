@@ -42,14 +42,16 @@ def all_in_one():
         num='Tasks 0 to 4 as subplots',
         figsize=(6.4, 4.8)
     )
-    # fig.set_layout_engine("constrained", w_pad = 4 / 72, h_pad = 4 / 72, wspace= 4 / 72, hspace= 4 / 72)
+    # fig.set_layout_engine("constrained",
+    #                       w_pad = 4 / 72, h_pad = 4 / 72,
+    #                       wspace= 4 / 72, hspace= 4 / 72)
     fig.set_layout_engine("tight",
                           pad=1.08,
                           rect=(0, 0, 1, 1.06))
-    
+
     fig.suptitle('All in One',
-                #   y=.95
-                )
+                 # y=.95
+                 )
     ax00 = axs['line']
     ax00.plot(np.arange(0, 11), y0, linestyle='-', color='red')
     ax00.set_xlim(0, 10)
@@ -91,4 +93,3 @@ def all_in_one():
 
     fig.savefig("all_in_one.png", dpi=300)
     plt.show()
-    
