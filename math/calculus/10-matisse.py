@@ -11,7 +11,7 @@ def poly_derivative(poly):
         return None
     if len(poly) == 1:
         return [0]
-    deriv = np.asarray(poly[1:]) * np.arange(1, len(poly))
+    deriv = list(np.asarray(poly[1:]) * np.arange(1, len(poly)))
     # deriv = []
     # for idx, val in enumerate(poly):
     #     if idx == 0:
