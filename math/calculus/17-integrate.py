@@ -9,6 +9,10 @@ def poly_integral(poly, C=0):
             or any(not isinstance(elem, int) for elem in poly)\
             or not isinstance(C, int):
         return None
+    while len(poly) > 0 and poly[-1] == 0:
+        poly.pop()
+    # if len(poly) == 1:
+    #     return [C]
     deriv = [C]
     for i, v in enumerate(poly):
         int_div, remainder = divmod(v, i + 1)
