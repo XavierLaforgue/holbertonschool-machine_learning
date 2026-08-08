@@ -2,8 +2,7 @@
 """Define function np_slice."""
 
 
-def np_slice(matrix,
-             axes: dict[int, tuple] | None = None):
+def np_slice(matrix, axes = None):
     """Slice the input matrix along a specific axes."""
     if axes is None:
         return matrix
