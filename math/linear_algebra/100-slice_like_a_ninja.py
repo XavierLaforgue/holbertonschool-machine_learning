@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Define function np_slice."""
-import numpy as np
 
 
-def np_slice(matrix: np.ndarray,
-             axes: dict[int, tuple] | None = None) -> np.ndarray:
+def np_slice(matrix,
+             axes: dict[int, tuple] | None = None):
     """Slice the input matrix along a specific axes."""
     if axes is None:
         return matrix
