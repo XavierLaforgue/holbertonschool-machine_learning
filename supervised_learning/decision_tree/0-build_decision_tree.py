@@ -23,8 +23,11 @@ class Node:
         """Calculate maximum depth of nodes below the current instance."""
         if self.is_leaf:
             return self.depth
-        return max(self.max_depth_below(self.left_child),
-                   self.max_depth_below(self.right_child))
+        if self.left_child and self.right_child:
+            return max(self.left_child.max_depth_below(),
+                       self.right_child.max_depth_below())
+        return (self.left_child.max_depth_below() if self.left_child
+                else self.right_child.max_depth_below())
 
 
 class Leaf(Node):
