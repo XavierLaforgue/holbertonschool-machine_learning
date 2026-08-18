@@ -83,7 +83,7 @@ class Isolation_Random_Tree:
 
     def get_leaf_child(self, node, sub_population):
         """Create leaf node with no value."""
-        leaf_child = Leaf(node.depth + 1)  # TODO: check this
+        leaf_child = Leaf(node.depth + 1)
         leaf_child.depth = node.depth + 1
         leaf_child.subpopulation = sub_population
         return leaf_child
@@ -111,7 +111,7 @@ class Isolation_Random_Tree:
         is_left_leaf = (
             np.sum(left_population) <= self.min_pop
             or child_depth == self.max_depth
-            )  # TODO: check this
+            )
 
         if is_left_leaf:
             node.left_child = self.get_leaf_child(node, left_population)
@@ -123,7 +123,7 @@ class Isolation_Random_Tree:
         is_right_leaf = (
             np.sum(right_population) <= self.min_pop
             or child_depth == self.max_depth
-        )  # TODO: to be filled (different from Decision_Tree)
+        )
 
         if is_right_leaf:
             node.right_child = self.get_leaf_child(node, right_population)
@@ -136,7 +136,7 @@ class Isolation_Random_Tree:
         self.split_criterion = self.random_split_criterion
         self.explanatory = explanatory
         self.root.sub_population = np.ones(explanatory.shape[0],
-                                                dtype='bool')
+                                           dtype='bool')
 
         self.fit_node(self.root)
         self.update_predict()
