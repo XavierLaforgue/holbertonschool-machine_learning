@@ -1,7 +1,7 @@
 [project]
 name = "holbertonschool-ml"
 version = "0.1.0"
-description = "Add your description here"
+description = "Machine-learning algorithms implemented from scratch in NumPy (Holberton School ML specialisation)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

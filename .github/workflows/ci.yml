@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install numpy scikit-learn matplotlib pycodestyle==2.11.1
+
+      - name: Style (pycodestyle)
+        run: pycodestyle $(git ls-files '*.py' | grep -v -- '-main')
+
+      - name: Decision tree and random forest demos
+        working-directory: supervised_learning/decision_tree
+        env:
+          MPLBACKEND: Agg
+        run: |
+          python 8-main_1.py
+          python 9-main_1.py

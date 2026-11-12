@@ -1,5 +1,6 @@
 # Supervised learning
 
-## Description
+Algorithms trained on labelled data, implemented in NumPy.
 
-Supervised learning module.
+- [`decision_tree`](decision_tree): decision trees, random forests, isolation forests.
+- [`classification`](classification): neural-network classifier, built up from a single neuron.
